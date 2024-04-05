@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import '../../constants/my_url_button.dart';
 import '../../constants/variables.dart';
+import 'cloud_agents.dart';
 
 class CloudFAQsNew extends StatefulWidget {
   const CloudFAQsNew({Key? key}) : super(key: key);
@@ -17,6 +18,7 @@ class _CloudFAQsNewState extends State<CloudFAQsNew> {
   @override
   void initState() {
     getFaqCommon();
+    getAgents();
     super.initState();
   }
 
@@ -39,6 +41,24 @@ class _CloudFAQsNewState extends State<CloudFAQsNew> {
     await readDataFaqCommon();
   }
 
+  //--------------
+
+  List cloudAgents = [];
+
+  Future readDataAgents() async {
+    var url = "http://10.4.1.208/myphpcloud/newfaq/agents.php";
+    var res = await http.get(Uri.parse(url));
+    if (res.statusCode == 200) {
+      var resBody = jsonDecode(res.body);
+      setState(() {
+        cloudAgents.addAll(resBody);
+      });
+    }
+  }
+
+  getAgents() async {
+    await readDataAgents();
+  }
 
 
 
@@ -150,6 +170,7 @@ class _CloudFAQsNewState extends State<CloudFAQsNew> {
               ),
               style: textbuttonStyle,
             ),
+            CloudAgents(title: 'Agents', myList: cloudAgents,)
           ],
         ),
       ],
