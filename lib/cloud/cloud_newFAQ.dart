@@ -67,7 +67,9 @@ class _CloudFAQsNewState extends State<CloudFAQsNew> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Center(
           child: Text('FAQs'.tr,

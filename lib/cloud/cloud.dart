@@ -10,6 +10,8 @@ import '../view/widgets/mainToAll/appBarNotificationButton.dart';
 import '../view/widgets/mainToAll/appbarTitle.dart';
 import '../view/widgets/mainToAll/feedBack.dart';
 import '../view/widgets/mainToAll/footer.dart';
+import 'cloud_checklist.dart';
+import 'cloud_files.dart';
 import 'cloud_helper.dart';
 import 'cloud_Notification.dart';
 import 'cloud_facebook.dart';
@@ -179,7 +181,10 @@ class _CloudHomeState extends State<CloudHome> {
             ),
             child: Padding(
               padding: const EdgeInsets.all(2.0),
-              child: Column(children: [
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
                 Container(
                   margin: const EdgeInsets.all(2.0),
                   padding: const EdgeInsets.only(left: 10, right: 10),
@@ -187,6 +192,7 @@ class _CloudHomeState extends State<CloudHome> {
                       border: Border.all(color: lighttextandtitle, width: 1)),
                   child: Row(
                     children: [
+                      LearnDocs(),
                       Spacer(
                         flex: 20,
                       ),
@@ -203,8 +209,9 @@ class _CloudHomeState extends State<CloudHome> {
                 ),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                   // Expanded(flex: 1, child: CloudCheckList()),
+                    Expanded(flex: 1, child: CloudCheckList()),
                     Expanded(flex: 1, child: CloudScriptNew()),
                     Expanded(flex: 1, child: CloudFAQsNew()),
                     Expanded(flex: 1, child: CloudHelper()),

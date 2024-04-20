@@ -45,211 +45,206 @@ class _CloudHelperState extends State<CloudHelper> {
     return Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Center(
-              child: Text('Helper'.tr,
-                  style: TextStyle(
-                      color: lighttextandtitle,
-                      fontSize: titlefontsize,
-                      fontWeight: FontWeight.bold)),
-            ),
-            Divider(
-              color: lighttextandtitle,
-              thickness: 3,
-            ),
-            ListView.builder(
-                shrinkWrap: true,
-                itemCount: cloudHelper.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      TextButton.icon(
-                        onPressed: () {
-                          Get.defaultDialog(
-                            buttonColor: Colors.red,
-                            textCancel: "Close".tr,
-                            cancelTextColor: Colors.red,
-                            onCancel: () {
-                              Get.previousRoute;
-                            },
-                            title: "${cloudHelper[index]["title"]}".tr,
-                            content: Expanded(
-                              child: Container(
-                                height: screenHeight,
-                                width: screenWidth,
-                                margin: const EdgeInsets.all(3),
-                                padding: const EdgeInsets.all(8.0),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  border: Border.all(
-                                      color: lighttextandtitle,
-                                      width: borderwidth),
-                                ),
-                                child: SingleChildScrollView(
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.end,
-                                    children: [
-                                      Center(
-                                        child: Text(cloudHelper[index]['text1'],
-                                            textDirection: TextDirection.rtl,
-                                            style:
-                                                TextStyle(color: lightbodycolor)),
-                                      ),
-                                      Center(
-                                        child: ImageOrTextWidget(
-                                          imagePath:
-                                              '${cloudHelper[index]['image1']}',
-                                          alternateText: '',
-                                        ),
-                                      ),
-                                      Center(
-                                        child: Text(cloudHelper[index]['text2'],
-                                            textDirection: TextDirection.rtl,
-                                            style:
-                                                TextStyle(color: lightbodycolor)),
-                                      ),
-                                      Center(
-                                        child: ImageOrTextWidget(
-                                          imagePath:
-                                              '${cloudHelper[index]['image2']}',
-                                          alternateText: '',
-                                        ),
-                                      ),
-                                      Center(
-                                        child: Text(cloudHelper[index]['text3'],
-                                            textDirection: TextDirection.rtl,
-                                            style:
-                                                TextStyle(color: lightbodycolor)),
-                                      ),
-                                      Center(
-                                        child: ImageOrTextWidget(
-                                          imagePath:
-                                              '${cloudHelper[index]['image3']}',
-                                          alternateText: '',
-                                        ),
-                                      ),
-                                      Center(
-                                        child: Text(cloudHelper[index]['text4'],
-                                            textDirection: TextDirection.rtl,
-                                            style:
-                                                TextStyle(color: lightbodycolor)),
-                                      ),
-                                      Center(
-                                        child: ImageOrTextWidget(
-                                          imagePath:
-                                              '${cloudHelper[index]['image4']}',
-                                          alternateText: '',
-                                        ),
-                                      ),
-                                      Center(
-                                        child: Text(cloudHelper[index]['text5'],
-                                            textDirection: TextDirection.rtl,
-                                            style:
-                                                TextStyle(color: lightbodycolor)),
-                                      ),
-                                      Center(
-                                        child: ImageOrTextWidget(
-                                          imagePath:
-                                              '${cloudHelper[index]['image5']}',
-                                          alternateText: '',
-                                        ),
-                                      ),
-                                      Center(
-                                        child: Text(cloudHelper[index]['text6'],
-                                            textDirection: TextDirection.rtl,
-                                            style:
-                                                TextStyle(color: lightbodycolor)),
-                                      ),
-                                      Center(
-                                        child: ImageOrTextWidget(
-                                          imagePath:
-                                              '${cloudHelper[index]['image6']}',
-                                          alternateText: '',
-                                        ),
-                                      ),
-                                      Center(
-                                        child: Text(cloudHelper[index]['text7'],
-                                            textDirection: TextDirection.rtl,
-                                            style:
-                                                TextStyle(color: lightbodycolor)),
-                                      ),
-                                      Center(
-                                        child: ImageOrTextWidget(
-                                          imagePath:
-                                              '${cloudHelper[index]['image7']}',
-                                          alternateText: '',
-                                        ),
-                                      ),
-                                      Center(
-                                        child: Text(cloudHelper[index]['text8'],
-                                            textDirection: TextDirection.rtl,
-                                            style:
-                                                TextStyle(color: lightbodycolor)),
-                                      ),
-                                      Center(
-                                        child: ImageOrTextWidget(
-                                          imagePath:
-                                              '${cloudHelper[index]['image8']}',
-                                          alternateText: '',
-                                        ),
-                                      ),
-                                      Center(
-                                        child: Text(cloudHelper[index]['text9'],
-                                            textDirection: TextDirection.rtl,
-                                            style:
-                                                TextStyle(color: lightbodycolor)),
-                                      ),
-                                      Center(
-                                        child: ImageOrTextWidget(
-                                          imagePath:
-                                              '${cloudHelper[index]['image9']}',
-                                          alternateText: '',
-                                        ),
-                                      ),
-                                      Center(
-                                        child: Text(cloudHelper[index]['text10'],
-                                            textDirection: TextDirection.rtl,
-                                            style:
-                                                TextStyle(color: lightbodycolor)),
-                                      ),
-                                      Center(
-                                        child: ImageOrTextWidget(
-                                          imagePath:
-                                              '${cloudHelper[index]['image10']}',
-                                          alternateText: '',
-                                        ),
-                                      ),
-                                    ],
+        Center(
+          child: Text('Helper'.tr,
+              style: TextStyle(
+                  color: lighttextandtitle,
+                  fontSize: titlefontsize,
+                  fontWeight: FontWeight.bold)),
+        ),
+        Divider(
+          color: lighttextandtitle,
+          thickness: 3,
+        ),
+        ListView.builder(
+            shrinkWrap: true,
+            itemCount: cloudHelper.length,
+            itemBuilder: (BuildContext context, int index) {
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  TextButton.icon(
+                    onPressed: () {
+                      Get.defaultDialog(
+                        buttonColor: Colors.red,
+                        textCancel: "Close".tr,
+                        cancelTextColor: Colors.red,
+                        onCancel: () {
+                          Get.previousRoute;
+                        },
+                        title: "${cloudHelper[index]["title"]}".tr,
+                        content: Expanded(
+                          child: Container(
+                            height: screenHeight,
+                            width: screenWidth,
+                            margin: const EdgeInsets.all(3),
+                            padding: const EdgeInsets.all(8.0),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(
+                                  color: lighttextandtitle,
+                                  width: borderwidth),
+                            ),
+                            child: SingleChildScrollView(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: [
+                                  Center(
+                                    child: Text(cloudHelper[index]['text1'],
+                                        textDirection: TextDirection.rtl,
+                                        style:
+                                            TextStyle(color: lightbodycolor)),
                                   ),
-                                ),
+                                  Center(
+                                    child: ImageOrTextWidget(
+                                      imagePath:
+                                          '${cloudHelper[index]['image1']}',
+                                      alternateText: '',
+                                    ),
+                                  ),
+                                  Center(
+                                    child: Text(cloudHelper[index]['text2'],
+                                        textDirection: TextDirection.rtl,
+                                        style:
+                                            TextStyle(color: lightbodycolor)),
+                                  ),
+                                  Center(
+                                    child: ImageOrTextWidget(
+                                      imagePath:
+                                          '${cloudHelper[index]['image2']}',
+                                      alternateText: '',
+                                    ),
+                                  ),
+                                  Center(
+                                    child: Text(cloudHelper[index]['text3'],
+                                        textDirection: TextDirection.rtl,
+                                        style:
+                                            TextStyle(color: lightbodycolor)),
+                                  ),
+                                  Center(
+                                    child: ImageOrTextWidget(
+                                      imagePath:
+                                          '${cloudHelper[index]['image3']}',
+                                      alternateText: '',
+                                    ),
+                                  ),
+                                  Center(
+                                    child: Text(cloudHelper[index]['text4'],
+                                        textDirection: TextDirection.rtl,
+                                        style:
+                                            TextStyle(color: lightbodycolor)),
+                                  ),
+                                  Center(
+                                    child: ImageOrTextWidget(
+                                      imagePath:
+                                          '${cloudHelper[index]['image4']}',
+                                      alternateText: '',
+                                    ),
+                                  ),
+                                  Center(
+                                    child: Text(cloudHelper[index]['text5'],
+                                        textDirection: TextDirection.rtl,
+                                        style:
+                                            TextStyle(color: lightbodycolor)),
+                                  ),
+                                  Center(
+                                    child: ImageOrTextWidget(
+                                      imagePath:
+                                          '${cloudHelper[index]['image5']}',
+                                      alternateText: '',
+                                    ),
+                                  ),
+                                  Center(
+                                    child: Text(cloudHelper[index]['text6'],
+                                        textDirection: TextDirection.rtl,
+                                        style:
+                                            TextStyle(color: lightbodycolor)),
+                                  ),
+                                  Center(
+                                    child: ImageOrTextWidget(
+                                      imagePath:
+                                          '${cloudHelper[index]['image6']}',
+                                      alternateText: '',
+                                    ),
+                                  ),
+                                  Center(
+                                    child: Text(cloudHelper[index]['text7'],
+                                        textDirection: TextDirection.rtl,
+                                        style:
+                                            TextStyle(color: lightbodycolor)),
+                                  ),
+                                  Center(
+                                    child: ImageOrTextWidget(
+                                      imagePath:
+                                          '${cloudHelper[index]['image7']}',
+                                      alternateText: '',
+                                    ),
+                                  ),
+                                  Center(
+                                    child: Text(cloudHelper[index]['text8'],
+                                        textDirection: TextDirection.rtl,
+                                        style:
+                                            TextStyle(color: lightbodycolor)),
+                                  ),
+                                  Center(
+                                    child: ImageOrTextWidget(
+                                      imagePath:
+                                          '${cloudHelper[index]['image8']}',
+                                      alternateText: '',
+                                    ),
+                                  ),
+                                  Center(
+                                    child: Text(cloudHelper[index]['text9'],
+                                        textDirection: TextDirection.rtl,
+                                        style:
+                                            TextStyle(color: lightbodycolor)),
+                                  ),
+                                  Center(
+                                    child: ImageOrTextWidget(
+                                      imagePath:
+                                          '${cloudHelper[index]['image9']}',
+                                      alternateText: '',
+                                    ),
+                                  ),
+                                  Center(
+                                    child: Text(cloudHelper[index]['text10'],
+                                        textDirection: TextDirection.rtl,
+                                        style:
+                                            TextStyle(color: lightbodycolor)),
+                                  ),
+                                  Center(
+                                    child: ImageOrTextWidget(
+                                      imagePath:
+                                          '${cloudHelper[index]['image10']}',
+                                      alternateText: '',
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
-                            backgroundColor: lightdialogbackground,
-                            titleStyle: TextStyle(color: lightbodycolor),
-                          );
-                        },
-                        icon: Icon(
-                          Icons.label_important,
-                          size: cascadeiconsize,
-                          color: iconcolor,
+                          ),
                         ),
-                        label: Text(
-                          '${cloudHelper[index]["title"]}'.tr,
-                          style: TextStyle(
-                              color: lighttextandtitle, fontSize: textsize),
-                        ),
-                      ),
-                    ],
-                  );
-                }),
-          ],
-        ),
+                        backgroundColor: lightdialogbackground,
+                        titleStyle: TextStyle(color: lightbodycolor),
+                      );
+                    },
+                    icon: Icon(
+                      Icons.label_important,
+                      size: cascadeiconsize,
+                      color: iconcolor,
+                    ),
+                    label: Text(
+                      '${cloudHelper[index]["title"]}'.tr,
+                      style: TextStyle(
+                          color: lighttextandtitle, fontSize: textsize),
+                    ),
+                  ),
+                ],
+              );
+            }),
       ],
     );
   }

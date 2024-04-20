@@ -142,6 +142,7 @@ class _CloudScriptNewState extends State<CloudScriptNew> {
     return Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Center(
           child: Text('Communication Script'.tr,
