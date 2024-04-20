@@ -44,58 +44,55 @@ class _LearnDocsState extends State<LearnDocs> {
     return Tooltip(
       message: "Files",
       child: InkWell(
-          onTap: () {
-            Get.defaultDialog(
-              buttonColor: Colors.red,
-              textCancel: "Close".tr,
-              cancelTextColor: Colors.red,
-              onCancel: () {
-                Get.previousRoute;
-              },
-              title: "Files".tr,
-              content: Expanded(
-                child: Container(
-                  height: screenHeight/2,
-                  width: screenWidth/2,
-                  margin: const EdgeInsets.all(3),
-                  padding: EdgeInsets.all(borderpadding),
-                  decoration: BoxDecoration(
-                    color: lightbackground,
-                    borderRadius: BorderRadius.circular(10),
-                    border:
-                        Border.all(color: lighttextandtitle, width: borderwidth),
-                  ),
-                  child: ListView.builder(
-                    shrinkWrap: true,
-                    itemCount: LearnDocs.length,
-                    itemBuilder: (BuildContext context, int index){
-                      return Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            buildUrlLaunchButton(
-                                '${LearnDocs[index]['title']}', '${LearnDocs[index]['body']}'),
-                          ]);
-                    },
-                  ),
+        onTap: () {
+          Get.defaultDialog(
+            buttonColor: Colors.red,
+            textCancel: "Close".tr,
+            cancelTextColor: Colors.red,
+            onCancel: () {
+              Get.previousRoute;
+            },
+            title: "Files".tr,
+            content: Container(
+              height: dialoghieght,
+              width: dialogwidth,
+              margin: const EdgeInsets.all(3),
+              padding: EdgeInsets.all(borderpadding),
+              decoration: BoxDecoration(
+                color: lightbackground,
+                borderRadius: BorderRadius.circular(10),
+                border:
+                Border.all(color: lighttextandtitle, width: borderwidth),
+              ),
+              child: ListView.builder(
+                shrinkWrap: true,
+                itemCount: LearnDocs.length,
+                itemBuilder: (BuildContext context, int index){
+                  return Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        buildUrlLaunchButton(
+                            '${LearnDocs[index]['title']}', '${LearnDocs[index]['body']}'),
+                      ]);
+                },
+              ),
+            ),
+            backgroundColor: lightdialogbackground,
+            titleStyle: TextStyle(color: helpertitleTextColor),
+          );
+        },
+        child:  CircleAvatar(
+            radius: 20,
+            backgroundColor: Colors.transparent,
+            child: Padding(
+              padding: const EdgeInsets.all(0), // Border radius
+              child: ClipOval(
+                child: Image.asset(
+                  AppImageAsset.downloadApp,
                 ),
               ),
-              backgroundColor: lightdialogbackground,
-              titleStyle: TextStyle(color: helpertitleTextColor),
-            );
-          },
-          child:  CircleAvatar(
-              radius: 20,
-              backgroundColor: Colors.transparent,
-              child: Padding(
-                padding: const EdgeInsets.all(0), // Border radius
-                child: ClipOval(
-                  child: Image.asset(
-                    AppImageAsset.downloadApp,
-                  ),
-                ),
-              )),),
+            )),),
     );
   }
 }
